@@ -5,7 +5,7 @@ services:
     ports:
       - 80
     deploy:
-      replicas: 1
+      replicas: 4
       resources:
         reservations:
           cpus: '0.1'
