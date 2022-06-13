@@ -2,8 +2,10 @@ version: '3.3'
 services:
   hello:
     image: rancher/hello-world:latest
-    ports:
-      - 80
+#    ports:
+#      - 80
+    networks:
+      - webproxy
     deploy:
       replicas: 16
       resources:
@@ -13,3 +15,14 @@ services:
         limits:
           cpus: '0.4'
           memory: 64M
+      labels:
+        traefik.docker.network: webproxy
+        traefik.enable: 'true'
+        traefik.http.routers.hello-https.entrypoints: websecure
+        traefik.http.routers.hello-https.rule: Host(`hello101.xops.ipv9.xyz`)
+        traefik.http.routers.hello-https.tls.certresolver: default
+        traefik.http.services.hello.loadbalancer.server.port: '80'
+
+networks:
+  webproxy:
+    external: true
