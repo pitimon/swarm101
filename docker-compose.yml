@@ -7,7 +7,7 @@ services:
     networks:
       - webproxy
     deploy:
-      replicas: 1
+      replicas: 16
       resources:
         reservations:
           cpus: '0.1'
