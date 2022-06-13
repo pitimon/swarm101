@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  hello:
+    image: rancher/hello-world:latest
+    ports:
+      - 80
+    deploy:
+      replicas: 1
+      resources:
+        reservations:
+          cpus: '0.1'
+          memory: 8M
+        limits:
+          cpus: '0.4'
+          memory: 64M
