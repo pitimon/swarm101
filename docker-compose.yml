@@ -17,7 +17,7 @@ services:
         - traefik.docker.network=webproxy
         - traefik.enable=true
         - traefik.http.routers.${APPNAME}.entrypoints=websecure
-        - traefik.http.routers.${APPNAME}.rule=Host(`${APPNAME}.xops.ipv9.xyz`)
+        - traefik.http.routers.${APPNAME}.rule=Host(`${APPNAME}.xops.ipv9.me`)
         - traefik.http.routers.${APPNAME}.tls.certresolver=default
         - traefik.http.services.${APPNAME}.loadbalancer.server.port=80
 
