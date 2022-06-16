@@ -19,7 +19,7 @@ services:
         traefik.docker.network: webproxy
         traefik.enable: 'true'
         traefik.http.routers.hello-https.entrypoints: websecure
-        traefik.http.routers.hello-https.rule: Host(`hello102.xops.ipv9.xyz`)
+        traefik.http.routers.hello-https.rule: Host(`hello100.xops.ipv9.xyz`)
         traefik.http.routers.hello-https.tls.certresolver: default
         traefik.http.services.hello.loadbalancer.server.port: '80'
 
